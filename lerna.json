@@ -1,19 +1,17 @@
 {
+    "npmClient": "pnpm",
     "packages": [
-        "packages/*"
+        "packages/**/*"
     ],
     "publish": {
-        "ignoreChanges": [
-            "*.md"
-        ],
-        "message": "chore(release): publish",
         "registry": "https://npm.pkg.github.com"
     },
     "bootstrap": {
-        "ignore": "component-*",
         "npmClientArgs": [
-            "--no-package-lock"
+            "--legacy-peer-deps",
+            "--force"
         ]
     },
-    "version": "independent"
+    "version": "independent",
+    "hoist": true
 }
